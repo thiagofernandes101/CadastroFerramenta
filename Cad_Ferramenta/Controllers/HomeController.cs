@@ -104,6 +104,8 @@ namespace Cad_Ferramenta.Controllers
         {
             try
             {
+                ViewBag.ErroConsulta = null;
+
                 FerramentaDAO dao = new FerramentaDAO();
                 dao.Excluir(id);
 
@@ -121,6 +123,7 @@ namespace Cad_Ferramenta.Controllers
             try
             {
                 ViewBag.Operacao = "A";
+                ViewBag.ErroConsulta = null;
 
                 FerramentaDAO dao = new FerramentaDAO();
                 FerramentaViewModel ferramenta = dao.ConsultaFerramenta(id);

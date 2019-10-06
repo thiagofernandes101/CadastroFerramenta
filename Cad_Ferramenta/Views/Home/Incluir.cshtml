@@ -19,7 +19,7 @@
             {
                 <div class="form-group">
                     <label asp-for="Id" class="control-label">Código</label>
-                    <input asp-for="Id" type="number" class="form-control" />
+                    <input asp-for="Id" type="number" class="form-control disabled" readonly />
                     <span asp-validation-for="Id" class="text-danger"></span>
                 </div>
             }
@@ -39,19 +39,15 @@
                 <input type="submit" class="btn btn-info" value="Salvar dados" />
             </div>
         </form>
-
-        @if (ViewBag.ErroIncluir != null)
-        {
-            <div class="form-group">
-                <div class="form-control">
-                    <span class="text-danger">@ViewBag.ErroIncluir</span>
-                </div>
-            </div>
-        }
     </div>
 </div>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+@if (ViewBag.ErroIncluir != null)
+{
+    <span class="text-danger">@ViewBag.ErroIncluir</span>
+}
 

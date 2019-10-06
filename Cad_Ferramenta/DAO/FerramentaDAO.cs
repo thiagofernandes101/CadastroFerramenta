@@ -15,8 +15,9 @@ namespace Cad_Ferramenta.DAO
             FerramentaViewModel ferramenta = new FerramentaViewModel
             {
                 Id = Convert.ToInt32(row["Id"]),
-                Descricao = row["DescricaoFerramenta"].ToString(),
-                FabricanteDescricao = row["DescricaoFabricante"].ToString()
+                Descricao = row["DescricaoFerramenta"] != null ? row["DescricaoFerramenta"].ToString() : null,
+                FabricanteId = row["FabricanteId"] != null ? Convert.ToInt32(row["FabricanteId"]) : 0,
+                FabricanteDescricao = row["DescricaoFabricante"] != null ? row["DescricaoFabricante"].ToString() : null
             };
 
             return ferramenta;

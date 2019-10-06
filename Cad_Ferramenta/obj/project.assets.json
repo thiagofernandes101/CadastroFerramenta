@@ -12549,11 +12549,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thiag\\OneDrive\\Área de Trabalho\\Thiago_082170029\\Cad_Ferramenta\\Cad_Ferramenta.csproj",
+      "projectUniqueName": "C:\\Users\\thiag\\OneDrive\\Área de Trabalho\\CadastroFerramenta\\Cad_Ferramenta\\Cad_Ferramenta.csproj",
       "projectName": "Cad_Ferramenta",
-      "projectPath": "C:\\Users\\thiag\\OneDrive\\Área de Trabalho\\Thiago_082170029\\Cad_Ferramenta\\Cad_Ferramenta.csproj",
+      "projectPath": "C:\\Users\\thiag\\OneDrive\\Área de Trabalho\\CadastroFerramenta\\Cad_Ferramenta\\Cad_Ferramenta.csproj",
       "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thiag\\OneDrive\\Área de Trabalho\\Thiago_082170029\\Cad_Ferramenta\\obj\\",
+      "outputPath": "C:\\Users\\thiag\\OneDrive\\Área de Trabalho\\CadastroFerramenta\\Cad_Ferramenta\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
