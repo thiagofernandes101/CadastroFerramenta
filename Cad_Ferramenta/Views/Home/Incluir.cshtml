@@ -1,0 +1,57 @@
+﻿@model Cad_Ferramenta.Models.FerramentaViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>Incluir</h2>
+
+<h4>Ferramenta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SalvarFerramenta" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" name="operacao" value="@ViewBag.Operacao" />
+
+            @if (ViewBag.Operacao == "A")
+            {
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label">Código</label>
+                    <input asp-for="Id" type="number" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+            }
+
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label">Descrição</label>
+                <input asp-for="Descricao" type="text" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FabricanteId" class="control-label">Fabricante</label>
+                <select asp-for="FabricanteId" asp-items="@(new SelectList(ViewBag.ListaFabricantes, "Id", "Descricao"))" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-info" value="Salvar dados" />
+            </div>
+        </form>
+
+        @if (ViewBag.ErroIncluir != null)
+        {
+            <div class="form-group">
+                <div class="form-control">
+                    <span class="text-danger">@ViewBag.ErroIncluir</span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

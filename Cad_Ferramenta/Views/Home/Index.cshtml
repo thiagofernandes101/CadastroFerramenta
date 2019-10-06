@@ -1,0 +1,54 @@
+﻿@model List<FerramentaViewModel>
+
+@{
+    ViewData["Title"] = "Ferramenta";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Incluir" class="btn btn-info">Nova inclusão</a>
+</p>
+
+@if (ViewBag.ErroConsulta == null)
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr class="success">
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Fabricante</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Descricao</td>
+                    <td>@item.FabricanteDescricao</td>
+                    <td>
+                        <a href="javascript:editarFerramenta(@item.Id)">Editar</a> |
+                        <a href="javascript:apagarFerramenta(@item.Id)">Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <span class="text-danger">@ViewBag.ErroConsulta</span>
+}
+
+<script>
+    function apagarFerramenta(id) {
+        if (confirm('Confirma a exclusão do registro?'))
+            location.href = 'Home/Delete?id=' + id;
+    }
+
+    function editarFerramenta(id) {
+        location.href = "Home/Edit?id=" + id;
+    }
+</script>
